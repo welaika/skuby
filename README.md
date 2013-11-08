@@ -1,5 +1,9 @@
 # Skuby
 
+[![Build Status](https://travis-ci.org/delphaber/skuby.png?branch=master)](https://travis-ci.org/delphaber/skuby)
+[![Coverage Status](https://coveralls.io/repos/delphaber/skuby/badge.png)](https://coveralls.io/r/delphaber/skuby)
+[![Dependency Status](https://gemnasium.com/delphaber/skuby.png)](https://gemnasium.com/delphaber/skuby)
+
 A Ruby interface for Skebby
 Allows you to send SMS through Skebby SMS Gateway.
 
