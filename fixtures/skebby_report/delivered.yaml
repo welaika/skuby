@@ -1,0 +1,10 @@
+---
+method: notify
+skebby_dispatch_id: '666'
+skebby_message_id: '777'
+recipient: '393471234567'
+status: DELIVERED
+error_code: '1'
+user_reference: '12345'
+skebby_date_time: Mon, 19 Feb 2012 17:52:01 +0000
+operator_date_time: Mon, 19 Feb 2012 17:51:01 +0000

@@ -44,10 +44,6 @@ module Skuby
       status == "DELIVERED"
     end
 
-    def failure?
-      !success?
-    end
-
     def status
       @raw["status"]
     end
@@ -65,7 +61,7 @@ module Skuby
     end
 
     def delivered_at
-      @raw["operator_date_time"]
+      Time.parse(@raw["operator_date_time"])
     end
 
   end

@@ -10,10 +10,6 @@ module Skuby
       status == "success"
     end
 
-    def failed?
-      !success?
-    end
-
     def sms_id?
       sms_id.present?
     end

@@ -1,0 +1,34 @@
+require 'spec_helper'
+require 'yaml'
+
+describe Skuby::Report do
+  let(:report) { Skuby::Report.new(params) }
+
+  context "with errors" do
+    let(:params) { YAML.load(File.open(fixture_for_skebby_report('error.yaml'))) }
+
+    it "parses skebby response" do
+      expect(report.success?).to be_false
+      expect(report.error_code).to eq(502)
+      expect(report.error_message).to be_present
+      expect(report.sms_id).to eq('333')
+      expect(report.delivered_at).to eq(Time.new(2005,8,15,17,51,1))
+    end
+  end
+
+  context "without errors" do
+    let(:params) { YAML.load(File.open(fixture_for_skebby_report('delivered.yaml'))) }
+
+    it "parses skebby response" do
+      expect(report.success?).to be_true
+      expect(report.sms_id).to eq('777')
+      expect(report.delivered_at).to eq(Time.new(2012,2,19,18,51,1))
+    end
+  end
+
+  def fixture_for_skebby_report(name)
+    File.join(File.dirname(__FILE__), '..', 'fixtures', 'skebby_report', name)
+  end
+
+end
+

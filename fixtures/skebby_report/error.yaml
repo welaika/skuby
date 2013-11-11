@@ -1,0 +1,10 @@
+---
+method: notify
+skebby_dispatch_id: '444'
+skebby_message_id: '333'
+recipient: '393471234567'
+status: UNDELIVERABLE
+error_code: '502'
+user_reference: '12345'
+skebby_date_time: Mon, 15 Aug 2005 15:52:01 +0000
+operator_date_time: Mon, 15 Aug 2005 15:51:01 +0000
