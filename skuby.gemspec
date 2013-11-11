@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["fabrizio.monti@welaika.com", "filippo.gangidino@welaika.com"]
   spec.description   = %q{A Ruby interface to Skebby}
   spec.summary       = %q{Allows you to send SMS through Skebby SMS Gateway}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/welaika/skuby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

@@ -15,7 +15,7 @@ module Skuby
       401 => 'Messaggio scaduto (telefono spento/non raggiungibile)',
       201 => 'Malfunzionamento rete operatore',
       203 => 'Destinatario non raggiungibile (in roaming)',
-      301 => 'Destinatario non valido (inesistente/in portabilita\' /non abilitato)',
+      301 => 'Destinatario non valido (inesistente/in portabilita\' - non abilitato)',
       302 => 'Numero errato',
       303 => 'Servizio SMS non abilitato',
       304 => 'Testo riconosciuto come spam',
