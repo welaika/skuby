@@ -21,9 +21,9 @@ describe Skuby::Credit do
     context "with wrong credentials" do
       before { Skuby.setup do |config| config.password = 'wrong_password' end }
 
-      it "raises an error" do
+      it "returns nil if something's wrong" do
         VCR.use_cassette('get_credit_wrong_credentials', match_requests_on: [:body]) do
-          expect{Skuby::Credit.balance}.to raise_error(ArgumentError)
+          expect(Skuby::Credit.balance).to be_nil
         end
       end
 

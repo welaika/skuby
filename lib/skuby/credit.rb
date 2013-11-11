@@ -5,11 +5,7 @@ module Skuby
 
     def self.balance
       response = CGI.parse(post('', body: build_params))
-      if response["status"].first == "success"
-        response["credit_left"].first.to_f
-      else
-        raise ArgumentError, "Cannot get skebby balance: #{response["message"].join(' ')}"
-      end
+      response["credit_left"].first.to_f if response["status"].first == "success"
     end
 
     def self.build_params
