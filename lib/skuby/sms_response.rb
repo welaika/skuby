@@ -4,7 +4,6 @@ module Skuby
 
     def initialize(query)
       @raw = CGI.parse(query)
-      parse
     end
 
     def success?

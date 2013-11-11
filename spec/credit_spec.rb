@@ -1,0 +1,33 @@
+require 'spec_helper'
+
+describe Skuby::Credit do
+
+  before do
+    Skuby.setup do |config|
+      config.username = 'username'
+      config.password = 'password'
+      config.sender_string = 'company'
+    end
+  end
+
+  context "::balance" do
+    it "returns balance in euro" do
+      VCR.use_cassette('get_credit', match_requests_on: [:body]) do
+        request = Skuby::Credit.balance
+        expect(request).to eq(9.49)
+      end
+    end
+
+    context "with wrong credentials" do
+      before { Skuby.setup do |config| config.password = 'wrong_password' end }
+
+      it "raises an error" do
+        VCR.use_cassette('get_credit_wrong_credentials', match_requests_on: [:body]) do
+          expect{Skuby::Credit.balance}.to raise_error(ArgumentError)
+        end
+      end
+
+    end
+  end
+end
+

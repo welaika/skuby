@@ -6,8 +6,8 @@ require 'skuby/version'
 Gem::Specification.new do |spec|
   spec.name          = "skuby"
   spec.version       = Skuby::VERSION
-  spec.authors       = ["Fabrizio Monti"]
-  spec.email         = ["fabrizio.monti@welaika.com"]
+  spec.authors       = ["Fabrizio Monti", "Filippo Gangi Dino"]
+  spec.email         = ["fabrizio.monti@welaika.com", "filippo.gangidino@welaika.com"]
   spec.description   = %q{A Ruby interface to Skebby}
   spec.summary       = %q{Allows you to send SMS through Skebby SMS Gateway}
   spec.homepage      = ""
@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry-plus"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
+  spec.add_development_dependency "mocha"
   spec.add_development_dependency "webmock"
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "coveralls"

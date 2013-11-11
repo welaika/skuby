@@ -8,7 +8,7 @@ module Skuby
       if response["status"].first == "success"
         response["credit_left"].first.to_f
       else
-        raise ArgumentError, "Cannot get skebby balance. #{response["message"].join(' ')}"
+        raise ArgumentError, "Cannot get skebby balance: #{response["message"].join(' ')}"
       end
     end
 
