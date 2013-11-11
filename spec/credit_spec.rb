@@ -12,7 +12,7 @@ describe Skuby::Credit do
 
   context "::balance" do
     it "returns balance in euro" do
-      VCR.use_cassette('get_credit', match_requests_on: [:body]) do
+      VCR.use_cassette('get_credit') do
         request = Skuby::Credit.balance
         expect(request).to eq(9.49)
       end
@@ -22,7 +22,7 @@ describe Skuby::Credit do
       before { Skuby.setup do |config| config.password = 'wrong_password' end }
 
       it "returns nil if something's wrong" do
-        VCR.use_cassette('get_credit_wrong_credentials', match_requests_on: [:body]) do
+        VCR.use_cassette('get_credit_wrong_credentials') do
           expect(Skuby::Credit.balance).to be_nil
         end
       end

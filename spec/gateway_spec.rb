@@ -14,7 +14,7 @@ describe Skuby::Gateway do
     before { Skuby.setup do |config| config.method = 'send_sms_classic' end }
 
     it "successfully send an sms" do
-      VCR.use_cassette('send_sms_classic', match_requests_on: [:body]) do
+      VCR.use_cassette('send_sms_classic') do
         response = Skuby::Gateway.send_sms('Lorem ipsum', '393290000000')
         expect(response.success?).to be_true
         expect(response.sms_id?).to be_false
@@ -27,7 +27,7 @@ describe Skuby::Gateway do
     before { Skuby.setup do |config| config.method = 'send_sms_basic' end }
 
     it "successfully send an sms" do
-      VCR.use_cassette('send_sms_basic', match_requests_on: [:body]) do
+      VCR.use_cassette('send_sms_basic') do
         response = Skuby::Gateway.send_sms('Lorem ipsum', '393290000000')
         expect(response.success?).to be_true
         expect(response.sms_id?).to be_false
@@ -40,7 +40,7 @@ describe Skuby::Gateway do
     before { Skuby.setup do |config| config.method = 'send_sms_classic_report' end }
 
     it "successfully send an sms" do
-      VCR.use_cassette('send_sms_classic_report', match_requests_on: [:body]) do
+      VCR.use_cassette('send_sms_classic_report') do
         response = Skuby::Gateway.send_sms('Lorem ipsum', '393290000000')
         expect(response.success?).to be_true
         expect(response.sms_id?).to be_true
@@ -55,7 +55,7 @@ describe Skuby::Gateway do
 
     context "no recipient" do
       it "returns an error" do
-        VCR.use_cassette('send_sms_no_recipient', match_requests_on: [:body]) do
+        VCR.use_cassette('send_sms_no_recipient') do
           response = Skuby::Gateway.send_sms('Lorem ipsum')
           expect(response.success?).to be_false
           expect(response.error_code).to eq(25)
@@ -68,7 +68,7 @@ describe Skuby::Gateway do
       before { Skuby.setup do |config| config.password = 'wrong_password' end }
 
       it "returns an error" do
-        VCR.use_cassette('send_sms_wrong_credentials', match_requests_on: [:body]) do
+        VCR.use_cassette('send_sms_wrong_credentials') do
           response = Skuby::Gateway.send_sms('Lorem ipsum', '393290000000')
           expect(response.success?).to be_false
           expect(response.error_code).to eq(21)
