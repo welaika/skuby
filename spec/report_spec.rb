@@ -12,7 +12,7 @@ describe Skuby::Report do
       expect(report.error_code).to eq(502)
       expect(report.error_message).to be_present
       expect(report.sms_id).to eq('333')
-      expect(report.delivered_at).to eq(Time.new(2005,8,15,17,51,1))
+      expect(report.delivered_at).to eq(Time.new(2005,8,15,15,51,1,"+00:00"))
     end
   end
 
@@ -22,7 +22,7 @@ describe Skuby::Report do
     it "parses skebby response" do
       expect(report.success?).to be_true
       expect(report.sms_id).to eq('777')
-      expect(report.delivered_at).to eq(Time.new(2012,2,19,18,51,1))
+      expect(report.delivered_at).to eq(Time.new(2012,2,19,17,51,1,"+00:00"))
     end
   end
 
