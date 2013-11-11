@@ -23,7 +23,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Configuration
+
+    Skuby.setup do |config|
+      config.method = 'send_sms_classic' #default
+      config.username = 'username'
+      config.password = 'password'
+      config.sender_string = 'company' #optional
+      config.sender_number = '39329900000' #optional
+    end
+
+Put these lines in `config/environments/production.rb` if you are using Skuby in Rails.
+
+### Send SMS
+
+Use international phone numbers without +, e.g. (for Italy) `393290000000`
+
+    sms = Skuby::Gateway.send_sms('Lorem ipsum', '393290000000')
+    sms.success? #=> true
+
+### Credit
+
+To retrieve your current balance in Euros:
+
+    Skuby::Credit.balance
+
 
 ## Contributing
 
