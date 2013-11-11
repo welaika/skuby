@@ -19,6 +19,8 @@ describe Skuby::Gateway do
         expect(response.success?).to be_true
         expect(response.sms_id?).to be_false
         expect(response.remaining_sms).to eq(152)
+        expect(response.text).to eq('Lorem ipsum')
+        expect(response.recipients).to eq(['393290000000'])
       end
     end
   end
@@ -32,6 +34,8 @@ describe Skuby::Gateway do
         expect(response.success?).to be_true
         expect(response.sms_id?).to be_false
         expect(response.remaining_sms).to eq(207)
+        expect(response.text).to eq('Lorem ipsum')
+        expect(response.recipients).to eq(['393290000000'])
       end
     end
   end
@@ -46,6 +50,8 @@ describe Skuby::Gateway do
         expect(response.sms_id?).to be_true
         expect(response.sms_id).to eq('64608933')
         expect(response.remaining_sms).to eq(150)
+        expect(response.text).to eq('Lorem ipsum')
+        expect(response.recipients).to eq(['393290000000'])
       end
     end
   end
@@ -60,6 +66,8 @@ describe Skuby::Gateway do
           expect(response.success?).to be_false
           expect(response.error_code).to eq(25)
           expect(response.error_message).to be_present
+          expect(response.text).to eq('Lorem ipsum')
+          expect(response.recipients).to eq([""])
         end
       end
     end
@@ -73,6 +81,8 @@ describe Skuby::Gateway do
           expect(response.success?).to be_false
           expect(response.error_code).to eq(21)
           expect(response.error_message).to be_present
+          expect(response.text).to eq('Lorem ipsum')
+          expect(response.recipients).to eq(['393290000000'])
         end
       end
     end

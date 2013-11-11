@@ -1,9 +1,11 @@
 module Skuby
-  class SmsResponse
-    attr_reader :raw
+  class SMSResponse
+    attr_reader :response, :text, :recipients
 
-    def initialize(query)
-      @raw = CGI.parse(query)
+    def initialize(response, text, recipients)
+      @response = CGI.parse(response)
+      @text = text
+      @recipients = Array(recipients)
     end
 
     def success?
@@ -15,23 +17,23 @@ module Skuby
     end
 
     def status
-      @raw["status"].first
+      @response["status"].first
     end
 
     def remaining_sms
-      @raw["remaining_sms"].first.to_i
+      @response["remaining_sms"].first.to_i
     end
 
     def sms_id
-      @raw["id"].first
+      @response["id"].first
     end
 
     def error_code
-      @raw["code"].first.to_i
+      @response["code"].first.to_i
     end
 
     def error_message
-      @raw["message"].first
+      @response["message"].first
     end
 
   end
