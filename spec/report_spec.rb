@@ -27,7 +27,7 @@ describe Skuby::Report do
   end
 
   def fixture_for_skebby_report(name)
-    File.join(File.dirname(__FILE__), '..', 'fixtures', 'skebby_report', name)
+    File.join(File.dirname(__FILE__), 'fixtures', 'skebby_report', name)
   end
 
 end
