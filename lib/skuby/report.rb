@@ -56,8 +56,12 @@ module Skuby
       "#{STATUS_MAPPING[status]} - #{ERROR_CODES[error_code]}"
     end
 
-    def sms_id
+    def message_id
       @raw["skebby_message_id"]
+    end
+
+    def dispatch_id
+      @raw["skebby_dispatch_id"]
     end
 
     def delivered_at
