@@ -15,6 +15,7 @@ module Skuby
 
     def initialize
       @method = 'send_sms_classic'
+      @charset = 'UTF-8'
     end
 
     def to_hash
