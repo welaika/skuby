@@ -32,6 +32,7 @@ Or install it yourself as:
       config.password = 'password'
       config.sender_string = 'company' #optional
       config.sender_number = '39329900000' #optional
+      config.charset = 'UTF-8' #skebby default is ISO-8859-1
     end
 
 Put these lines in `config/environments/production.rb` if you are using Skuby in Rails.
