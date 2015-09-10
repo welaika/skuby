@@ -4,7 +4,6 @@ Coveralls.wear!
 require 'webmock/rspec'
 require 'mocha/api'
 require 'vcr'
-require 'pry'
 
 require 'skuby'
 
