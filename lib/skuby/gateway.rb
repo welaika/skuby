@@ -5,7 +5,7 @@ module Skuby
 
     def self.send_sms(text = '', recipients = '')
       params = build_params(text, recipients)
-      SMSResponse.new(self.post('', body: params), text, recipients)
+      SMSResponse.new(self.post('', body: params, verify: false), text, recipients)
     end
 
     def self.build_params(text, recipients)
@@ -13,4 +13,3 @@ module Skuby
     end
   end
 end
-
