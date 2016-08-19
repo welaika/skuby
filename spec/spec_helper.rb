@@ -2,8 +2,11 @@ require 'minitest/reporters'
 require 'minitest/autorun'
 require 'webmock/minitest'
 require 'vcr'
+require 'coveralls'
+
 require_relative '../lib/skuby'
 
+Coveralls.wear!
 Minitest::Reporters.use!
 
 VCR.configure do |config|

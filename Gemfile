@@ -8,3 +8,5 @@ gem 'rake'
 gem 'webmock'
 gem 'minitest'
 gem 'vcr'
+
+gem 'coveralls', require: false

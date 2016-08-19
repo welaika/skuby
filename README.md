@@ -1,10 +1,8 @@
 # Skuby
 
 [![Build Status](https://travis-ci.org/k3rn31/skuby.svg?branch=master)](https://travis-ci.org/k3rn31/skuby)
-<!--
-[![Coverage Status](https://coveralls.io/repos/welaika/skuby/badge.png)](https://coveralls.io/r/welaika/skuby)
-[![Code Climate](https://codeclimate.com/github/welaika/skuby.png)](https://codeclimate.com/github/welaika/skuby)
-[![Dependency Status](https://gemnasium.com/welaika/skuby.png)](https://gemnasium.com/welaika/skuby) -->
+[![Coverage Status](https://coveralls.io/repos/github/k3rn31/skuby/badge.svg)](https://coveralls.io/github/k3rn31/skuby)
+[![Code Climate](https://codeclimate.com/github/k3rn31/skuby/badges/gpa.svg)](https://codeclimate.com/github/k3rn31/skuby)
 
 NOTE: This is a fork of the original [Skuby](https://github.com/welaika/skuby) by Fabrizio Monti, Filippo Gangi Dino. This fork exists because I needed a specific behaviour from this gem. The main difference is in the recipient format.
 
