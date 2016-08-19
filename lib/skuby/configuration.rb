@@ -18,7 +18,7 @@ module Skuby
     end
 
     def to_hash
-      instance_variables.inject({}) do |result, var|
+      instance_variables.each_with_object({}) do |var, result|
         result[var.to_s.delete('@')] = instance_variable_get(var)
         result
       end
