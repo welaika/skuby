@@ -8,14 +8,14 @@ require 'skuby/sms_response'
 require 'skuby/report'
 require 'skuby/credit'
 
+# Skuby is a Ruby interface for Skebby.
+# It allows you to send SMS through Skebby SMS Gateway.
 module Skuby
-
   def self.setup
-    yield self.config
+    yield config
   end
 
   def self.config
     @config ||= Configuration.new
   end
-
 end
