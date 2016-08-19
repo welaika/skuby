@@ -65,8 +65,15 @@ module Skuby
     end
 
     def delivered_at
-      Time.parse(@raw["operator_date_time"])
+      Time.zone.parse(@raw["operator_date_time"])
     end
 
+    def skebby_at
+      Time.zone.parse(@raw["skebby_date_time"])
+    end
+
+    def recipient
+      @raw["recipient"]
+    end
   end
 end
