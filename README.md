@@ -1,9 +1,11 @@
 # Skuby
 
-[![Build Status](https://travis-ci.org/welaika/skuby.png?branch=master)](https://travis-ci.org/welaika/skuby)
+<!-- [![Build Status](https://travis-ci.org/welaika/skuby.png?branch=master)](https://travis-ci.org/welaika/skuby)
 [![Coverage Status](https://coveralls.io/repos/welaika/skuby/badge.png)](https://coveralls.io/r/welaika/skuby)
 [![Code Climate](https://codeclimate.com/github/welaika/skuby.png)](https://codeclimate.com/github/welaika/skuby)
-[![Dependency Status](https://gemnasium.com/welaika/skuby.png)](https://gemnasium.com/welaika/skuby)
+[![Dependency Status](https://gemnasium.com/welaika/skuby.png)](https://gemnasium.com/welaika/skuby) -->
+
+NOTE: This is a fork of the original [Skuby](https://github.com/welaika/skuby) by Fabrizio Monti, Filippo Gangi Dino. This fork exists because I needed a specific behaviour from this gem. The main difference is in the recipient format.
 
 A Ruby interface for Skebby
 Allows you to send SMS through Skebby SMS Gateway.
@@ -12,13 +14,13 @@ Allows you to send SMS through Skebby SMS Gateway.
 
 Add this line to your application's Gemfile:
 
-    gem 'skuby'
+    gem 'skuby', github: 'k3rn31/skuby', branch: 'master'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Or install it yourself as (NOTE: this fork isn't present on rubygems.org):
 
     $ gem install skuby
 
@@ -40,8 +42,9 @@ Put these lines in `config/environments/production.rb` if you are using Skuby in
 ### Send SMS
 
 Use international phone numbers without +, e.g. (for Italy) `393290000000`
+NOTE: This fork of Skuby uses a hash and allows to send multiple recipients with associated variables.
 
-    sms = Skuby::Gateway.send_sms('Lorem ipsum', '393290000000')
+    sms = Skuby::Gateway.send_sms('Lorem ipsum', [{recipient: '393290000000', nome: 'Nome'}, {...}])
     sms.success? #=> true
 
 ### Credit
