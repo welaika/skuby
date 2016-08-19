@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in skuby.gemspec
-gemspec
+gem 'httparty'
+gem 'activesupport'
+gem 'rake'
+gem 'webmock'
+gem 'minitest'
+gem 'vcr'

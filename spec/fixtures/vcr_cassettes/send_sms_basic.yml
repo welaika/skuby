@@ -5,26 +5,32 @@ http_interactions:
     uri: https://gateway.skebby.it/api/send/smseasy/advanced/http.php
     body:
       encoding: UTF-8
-      string: method=send_sms_basic&username=username&password=password&sender_string=company&text=Lorem%20ipsum&recipients[]=393290000000
-    headers: {}
+      string: method=send_sms_basic&username=username&password=password&sender_string=company&recipients[0][recipient]=393290000000&text=Lorem%20ipsum
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 11 Nov 2013 10:52:45 GMT
+      - Fri, 19 Aug 2016 14:14:47 GMT
       Server:
       - Apache
       Vary:
       - Accept-Encoding
       Content-Length:
-      - '32'
+      - '129'
       Content-Type:
       - text/html
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: status=success&remaining_sms=207
-    http_version: 
-  recorded_at: Mon, 11 Nov 2013 10:52:45 GMT
-recorded_with: VCR 2.7.0
+    http_version:
+  recorded_at: Fri, 19 Aug 2016 14:14:47 GMT
+recorded_with: VCR 3.0.3

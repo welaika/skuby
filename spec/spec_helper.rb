@@ -1,27 +1,15 @@
-require 'coveralls'
-Coveralls.wear!
-
-require 'webmock/rspec'
-require 'mocha/api'
+require 'minitest/reporters'
+require 'minitest/autorun'
+require 'webmock/minitest'
 require 'vcr'
-require 'pry'
+require_relative '../lib/skuby'
 
-require 'skuby'
+Minitest::Reporters.use!
 
-RSpec.configure do |config|
-  config.expect_with :rspec do |c|
-    c.syntax = :expect
-  end
-  config.treat_symbols_as_metadata_keys_with_true_values = true
-  config.run_all_when_everything_filtered = true
-  config.filter_run :focus
-  config.mock_framework = :mocha
-  config.order = 'random'
+VCR.configure do |config|
+  config.default_cassette_options = {
+    match_requests_on: [:method, :uri]
+  }
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
 end
-
-VCR.configure do |c|
-  c.default_cassette_options = { match_requests_on: [:method, :uri, :body] }
-  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
-  c.hook_into :webmock
-end
-
