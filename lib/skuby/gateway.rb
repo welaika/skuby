@@ -9,8 +9,14 @@ module Skuby
     end
 
     def self.build_params(text, recipients)
-      Skuby.config.to_hash.merge({'text' => text, 'recipients[]' => recipients})
+      recipients_hash = {}
+      recipients.each_with_index do |recipient, index|
+        recipient.each do |key, value|
+          recipients_hash["recipients[#{index}][#{key}]"] = value
+        end
+      end
+      recipients_hash['text'] = text
+      Skuby.config.to_hash.merge(recipients_hash)
     end
   end
 end
-
