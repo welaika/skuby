@@ -1,4 +1,5 @@
 module Skuby
+  # This class gets the response from Skebby.
   class SMSResponse
     attr_reader :response, :text, :recipients
 
@@ -9,7 +10,7 @@ module Skuby
     end
 
     def success?
-      status == "success"
+      status == 'success'
     end
 
     def sms_id?
@@ -17,25 +18,23 @@ module Skuby
     end
 
     def status
-      @response["status"].first
+      @response['status'].first
     end
 
     def remaining_sms
-      @response["remaining_sms"].first.to_i
+      @response['remaining_sms'].first.to_i
     end
 
     def sms_id
-      @response["id"].first
+      @response['id'].first
     end
 
     def error_code
-      @response["code"].first.to_i
+      @response['code'].first.to_i
     end
 
     def error_message
-      @response["message"].first
+      @response['message'].first
     end
-
   end
 end
-

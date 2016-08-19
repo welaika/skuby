@@ -1,21 +1,24 @@
 module Skuby
+  # This class parses the parameters sent by Skebby to update the SMS status.
   class Report
-
     STATUS_MAPPING = {
       'DELIVERED'     => 'Messaggio consegnato',
-      'EXPIRED'       => 'Messaggio scaduto (telefono spento/non raggiungibile)',
+      'EXPIRED'       => 'Messaggio scaduto (telefono spento/non' \
+                        ' raggiungibile)',
       'DELETED'       => 'Errore rete operatore',
-      'UNDELIVERABLE' => 'Messaggio non spedito (Vedi sotto variabile error_code)',
+      'UNDELIVERABLE' => 'Messaggio non spedito (Vedi sotto variabile' \
+                          ' error_code)',
       'UNKNOWN'       => 'Errore generico',
       'REJECTD'       => 'Messaggio rifiutato dall\'operatore'
-    }
+    }.freeze
 
     ERROR_CODES = {
       1   => 'Consegnato',
       401 => 'Messaggio scaduto (telefono spento/non raggiungibile)',
       201 => 'Malfunzionamento rete operatore',
       203 => 'Destinatario non raggiungibile (in roaming)',
-      301 => 'Destinatario non valido (inesistente/in portabilita\' - non abilitato)',
+      301 => 'Destinatario non valido (inesistente/in portabilita\'' \
+             ' - non abilitato)',
       302 => 'Numero errato',
       303 => 'Servizio SMS non abilitato',
       304 => 'Testo riconosciuto come spam',
@@ -32,7 +35,7 @@ module Skuby
       910 => 'Testo troppo lungo',
       101 => 'Malfunzionamento generico operatore',
       202 => 'Messaggio rifiutato dall\'operatore'
-    }
+    }.freeze
 
     attr_reader :raw
 
@@ -41,15 +44,15 @@ module Skuby
     end
 
     def success?
-      status == "DELIVERED"
+      status == 'DELIVERED'
     end
 
     def status
-      @raw["status"]
+      @raw['status']
     end
 
     def error_code
-      @raw["error_code"].to_i
+      @raw['error_code'].to_i
     end
 
     def error_message
@@ -57,23 +60,23 @@ module Skuby
     end
 
     def message_id
-      @raw["skebby_message_id"].to_i
+      @raw['skebby_message_id'].to_i
     end
 
     def dispatch_id
-      @raw["skebby_dispatch_id"]
+      @raw['skebby_dispatch_id']
     end
 
     def delivered_at
-      Time.zone.parse(@raw["operator_date_time"])
+      Time.zone.parse(@raw['operator_date_time'])
     end
 
     def skebby_at
-      Time.zone.parse(@raw["skebby_date_time"])
+      Time.zone.parse(@raw['skebby_date_time'])
     end
 
     def recipient
-      @raw["recipient"]
+      @raw['recipient']
     end
   end
 end
