@@ -11,4 +11,5 @@ gem 'minitest-reporters'
 gem 'vcr'
 
 gem 'coveralls', require: false
-gem 'rubocop'
+gem 'simplecov', require: false
+gem 'rubocop', require: false

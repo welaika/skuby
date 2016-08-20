@@ -4,10 +4,14 @@ require 'minitest/autorun'
 require 'webmock/minitest'
 require 'vcr'
 require 'coveralls'
+require 'simplecov'
 
 require_relative '../lib/skuby'
 
-Coveralls.wear!
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+SimpleCov.start do
+  add_filter 'spec'
+end
 Minitest::Reporters.use!
 
 VCR.configure do |config|
