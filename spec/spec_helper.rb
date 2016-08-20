@@ -1,4 +1,16 @@
 # frozen_string_literal: true
+require 'coveralls'
+require 'simplecov'
+
+SimpleCov.formatters = [
+  Coveralls::SimpleCov::Formatter,
+  SimpleCov::Formatter::HTMLFormatter
+]
+SimpleCov.start do
+  add_filter '/spec/'
+  command_name 'test:minitest'
+end
+
 require 'minitest/reporters'
 require 'minitest/autorun'
 require 'webmock/minitest'
@@ -8,10 +20,6 @@ require 'simplecov'
 
 require_relative '../lib/skuby'
 
-SimpleCov.formatter = Coveralls::SimpleCov::Formatter
-SimpleCov.start do
-  add_filter 'spec'
-end
 Minitest::Reporters.use!
 
 VCR.configure do |config|
