@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.description   = %(A Ruby interface to Skebby)
   spec.summary       = %(Allows you to send SMS through Skebby SMS Gateway)
   spec.homepage      = 'https://github.com/l3rn31/skuby'
-  spec.license       = ['MIT']
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($RS)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
