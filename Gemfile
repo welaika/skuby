@@ -10,3 +10,4 @@ gem 'minitest'
 gem 'vcr'
 
 gem 'coveralls', require: false
+gem 'rubocop'
