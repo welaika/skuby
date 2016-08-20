@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Skuby
   # This class gets the response from Skebby.
   class SMSResponse

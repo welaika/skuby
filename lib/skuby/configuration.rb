@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Skuby
   # This class sets un the configuration.
   class Configuration

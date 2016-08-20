@@ -1,4 +1,5 @@
 AllCops:
+  TargetRubyVersion: 2.3
   Include:
     - Rakefile
     - config.ru
@@ -22,6 +23,9 @@ Metrics/AbcSize:
 
 OutputSafety:
   Enabled: false
+
+FrozenStringLiteralComment:
+  Enabled: true
 
 Style/Documentation:
   Exclude:

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'httparty'
 require 'cgi'
 require 'active_support/core_ext/object'

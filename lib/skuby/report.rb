@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Skuby
   # This class parses the parameters sent by Skebby to update the SMS status.
   class Report

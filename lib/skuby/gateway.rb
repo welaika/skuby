@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Skuby
   # This class in the main interface with Skebby. It talks with the base_uri
   # to send an SMS.

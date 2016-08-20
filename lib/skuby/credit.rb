@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Skuby
   # This class retrieves the current credit balance at Skebby.
   class Credit
