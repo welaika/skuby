@@ -76,6 +76,10 @@ module Skuby
       Time.zone.parse(@raw['skebby_date_time'])
     end
 
+    def user_reference
+      @raw['user_reference']
+    end
+
     def recipient
       @raw['recipient']
     end

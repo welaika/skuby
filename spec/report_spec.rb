@@ -46,6 +46,7 @@ describe Skuby::Report do
     report.message_id.must_equal 777
     report.dispatch_id.must_equal '666'
     report.recipient.must_equal '393471234567'
+    report.user_reference.must_equal '12345'
     report.delivered_at.must_equal Time.new(
       2012, 2, 19, 17, 51, 1, '+00:00'
     ).in_time_zone
