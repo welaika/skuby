@@ -7,7 +7,7 @@ gem 'activesupport'
 gem 'rake'
 gem 'webmock'
 gem 'minitest'
-gem 'minitest/reporters'
+gem 'minitest-reporters'
 gem 'vcr'
 
 gem 'coveralls', require: false
