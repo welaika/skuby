@@ -12,7 +12,7 @@ module Skuby
     #   [{recipient: '391234567', nome: 'Nome'}, {...}]
     def self.send_sms(text = '', recipients = '')
       params = build_params(text, recipients)
-      SMSResponse.new(post('', body: params), text, recipients)
+      SMSResponse.new(post('', body: params, verify: false), text, recipients)
     end
 
     # Builds the parameters for the http request to Skebby.

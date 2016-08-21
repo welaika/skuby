@@ -6,7 +6,7 @@ module Skuby
     base_uri 'https://gateway.skebby.it/api/send/smseasy/advanced/http.php'
 
     def self.balance
-      response = CGI.parse(post('', body: build_params))
+      response = CGI.parse(post('', body: build_params, verify: false))
       if response['status'].first == 'success'
         response['credit_left'].first.to_f
       end
