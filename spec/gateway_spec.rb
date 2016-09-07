@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe Skuby::Gateway do
+RSpec.describe Skuby::Gateway do
 
   before do
     Skuby.setup do |config|

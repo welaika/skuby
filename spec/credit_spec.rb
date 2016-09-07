@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe Skuby::Credit do
+RSpec.describe Skuby::Credit do
 
   before do
     Skuby.setup do |config|

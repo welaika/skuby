@@ -1,7 +1,6 @@
-require 'spec_helper'
 require 'yaml'
 
-describe Skuby::Report do
+RSpec.describe Skuby::Report do
   let(:report) { Skuby::Report.new(params) }
 
   context "with errors" do
