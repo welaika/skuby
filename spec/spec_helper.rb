@@ -5,6 +5,7 @@ require 'webmock/rspec'
 require 'mocha/api'
 require 'vcr'
 
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'skuby'
 
 RSpec.configure do |config|
