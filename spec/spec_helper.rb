@@ -4,7 +4,6 @@ Coveralls.wear!
 require 'webmock/rspec'
 require 'mocha/api'
 require 'vcr'
-require 'pry'
 
 require 'skuby'
 
@@ -24,4 +23,3 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   c.hook_into :webmock
 end
-
