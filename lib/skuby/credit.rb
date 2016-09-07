@@ -9,8 +9,7 @@ module Skuby
     end
 
     def self.build_params
-      Skuby.config.to_hash.merge({'method' => 'get_credit'})
+      Skuby.config.to_hash.merge('method' => 'get_credit')
     end
-
   end
 end

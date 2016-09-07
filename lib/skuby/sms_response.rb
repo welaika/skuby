@@ -35,7 +35,5 @@ module Skuby
     def error_message
       @response["message"].first
     end
-
   end
 end
-

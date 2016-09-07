@@ -1,6 +1,5 @@
 module Skuby
   class Report
-
     STATUS_MAPPING = {
       'DELIVERED'     => 'Messaggio consegnato',
       'EXPIRED'       => 'Messaggio scaduto (telefono spento/non raggiungibile)',
@@ -8,7 +7,7 @@ module Skuby
       'UNDELIVERABLE' => 'Messaggio non spedito (Vedi sotto variabile error_code)',
       'UNKNOWN'       => 'Errore generico',
       'REJECTD'       => 'Messaggio rifiutato dall\'operatore'
-    }
+    }.freeze
 
     ERROR_CODES = {
       1   => 'Consegnato',
@@ -32,7 +31,7 @@ module Skuby
       910 => 'Testo troppo lungo',
       101 => 'Malfunzionamento generico operatore',
       202 => 'Messaggio rifiutato dall\'operatore'
-    }
+    }.freeze
 
     attr_reader :raw
 
@@ -67,6 +66,5 @@ module Skuby
     def delivered_at
       Time.parse(@raw["operator_date_time"])
     end
-
   end
 end

@@ -1,5 +1,4 @@
 RSpec.describe Skuby::Credit do
-
   before do
     Skuby.setup do |config|
       config.username = 'username'
@@ -17,15 +16,15 @@ RSpec.describe Skuby::Credit do
     end
 
     context "with wrong credentials" do
-      before { Skuby.setup do |config| config.password = 'wrong_password' end }
+      before do
+        Skuby.setup { |config| config.password = 'wrong_password' }
+      end
 
       it "returns nil if something's wrong" do
         VCR.use_cassette('get_credit_wrong_credentials') do
           expect(Skuby::Credit.balance).to be_nil
         end
       end
-
     end
   end
 end
-

@@ -9,13 +9,11 @@ require 'skuby/report'
 require 'skuby/credit'
 
 module Skuby
-
   def self.setup
-    yield self.config
+    yield config
   end
 
   def self.config
     @config ||= Configuration.new
   end
-
 end

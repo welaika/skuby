@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Fabrizio Monti", "Filippo Gangi Dino"]
   spec.email         = ["fabrizio.monti@welaika.com", "filippo.gangidino@welaika.com"]
 
-  spec.summary       = %q{Allows you to send SMS through Skebby SMS Gateway}
-  spec.description   = %q{A Ruby interface to Skebby}
+  spec.summary       = "Allows you to send SMS through Skebby SMS Gateway"
+  spec.description   = "A Ruby interface to Skebby"
   spec.homepage      = "https://github.com/welaika/skuby"
   spec.license       = "MIT"
 
@@ -22,7 +22,9 @@ Gem::Specification.new do |spec|
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(%r{^(test|spec|features)/})
+  end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]

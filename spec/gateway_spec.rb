@@ -1,5 +1,4 @@
 RSpec.describe Skuby::Gateway do
-
   before do
     Skuby.setup do |config|
       config.username = 'username'
@@ -9,7 +8,9 @@ RSpec.describe Skuby::Gateway do
   end
 
   context "with send sms classic" do
-    before { Skuby.setup do |config| config.method = 'send_sms_classic' end }
+    before do
+      Skuby.setup { |config| config.method = 'send_sms_classic' }
+    end
 
     it "successfully send an sms" do
       VCR.use_cassette('send_sms_classic') do
@@ -24,7 +25,9 @@ RSpec.describe Skuby::Gateway do
   end
 
   context "with send sms basic" do
-    before { Skuby.setup do |config| config.method = 'send_sms_basic' end }
+    before do
+      Skuby.setup { |config| config.method = 'send_sms_basic' }
+    end
 
     it "successfully send an sms" do
       VCR.use_cassette('send_sms_basic') do
@@ -39,7 +42,9 @@ RSpec.describe Skuby::Gateway do
   end
 
   context "with send sms classic report" do
-    before { Skuby.setup do |config| config.method = 'send_sms_classic_report' end }
+    before do
+      Skuby.setup { |config| config.method = 'send_sms_classic_report' }
+    end
 
     it "successfully send an sms" do
       VCR.use_cassette('send_sms_classic_report') do
@@ -55,7 +60,9 @@ RSpec.describe Skuby::Gateway do
   end
 
   context "with errors in request" do
-    before { Skuby.setup do |config| config.method = 'send_sms_classic_report' end }
+    before do
+      Skuby.setup { |config| config.method = 'send_sms_classic_report' }
+    end
 
     context "no recipient" do
       it "returns an error" do
@@ -71,7 +78,9 @@ RSpec.describe Skuby::Gateway do
     end
 
     context "with wrong credentials" do
-      before { Skuby.setup do |config| config.password = 'wrong_password' end }
+      before do
+        Skuby.setup { |config| config.password = 'wrong_password' }
+      end
 
       it "returns an error" do
         VCR.use_cassette('send_sms_wrong_credentials') do
@@ -84,7 +93,5 @@ RSpec.describe Skuby::Gateway do
         end
       end
     end
-
   end
 end
-

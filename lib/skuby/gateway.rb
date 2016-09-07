@@ -5,11 +5,11 @@ module Skuby
 
     def self.send_sms(text = '', recipients = '')
       params = build_params(text, recipients)
-      SMSResponse.new(self.post('', body: params, verify: false), text, recipients)
+      SMSResponse.new(post('', body: params, verify: false), text, recipients)
     end
 
     def self.build_params(text, recipients)
-      Skuby.config.to_hash.merge({'text' => text, 'recipients[]' => recipients})
+      Skuby.config.to_hash.merge('text' => text, 'recipients[]' => recipients)
     end
   end
 end
