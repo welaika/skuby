@@ -8,7 +8,7 @@ describe Skuby::Report do
     let(:params) { YAML.load(File.open(fixture_for_skebby_report('error.yaml'))) }
 
     it "parses skebby response" do
-      expect(report.success?).to be_false
+      expect(report.success?).to be(false)
       expect(report.error_code).to eq(502)
       expect(report.error_message).to be_present
       expect(report.message_id).to eq('333')
@@ -21,7 +21,7 @@ describe Skuby::Report do
     let(:params) { YAML.load(File.open(fixture_for_skebby_report('delivered.yaml'))) }
 
     it "parses skebby response" do
-      expect(report.success?).to be_true
+      expect(report.success?).to be(true)
       expect(report.message_id).to eq('777')
       expect(report.dispatch_id).to eq('666')
       expect(report.delivered_at).to eq(Time.new(2012,2,19,17,51,1,"+00:00"))
