@@ -70,7 +70,7 @@ RSpec.describe Skuby::Gateway do
           response = Skuby::Gateway.send_sms('Lorem ipsum')
           expect(response.success?).to be(false)
           expect(response.error_code).to eq(25)
-          expect(response.error_message).to be_present
+          expect(response.error_message).to_not be_empty
           expect(response.text).to eq('Lorem ipsum')
           expect(response.recipients).to eq([""])
         end
@@ -87,7 +87,7 @@ RSpec.describe Skuby::Gateway do
           response = Skuby::Gateway.send_sms('Lorem ipsum', '393290000000')
           expect(response.success?).to be(false)
           expect(response.error_code).to eq(21)
-          expect(response.error_message).to be_present
+          expect(response.error_message).to_not be_empty
           expect(response.text).to eq('Lorem ipsum')
           expect(response.recipients).to eq(['393290000000'])
         end

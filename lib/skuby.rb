@@ -1,6 +1,5 @@
 require 'httparty'
 require 'cgi'
-require 'active_support/core_ext/object'
 require 'skuby/version'
 require 'skuby/configuration'
 require 'skuby/gateway'

@@ -13,7 +13,7 @@ module Skuby
     end
 
     def sms_id?
-      sms_id.present?
+      !sms_id.nil?
     end
 
     def status

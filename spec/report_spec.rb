@@ -9,7 +9,7 @@ RSpec.describe Skuby::Report do
     it "parses skebby response" do
       expect(report.success?).to be(false)
       expect(report.error_code).to eq(502)
-      expect(report.error_message).to be_present
+      expect(report.error_message).to_not be_empty
       expect(report.message_id).to eq('333')
       expect(report.dispatch_id).to eq('444')
       expect(report.delivered_at).to eq(Time.new(2005, 8, 15, 15, 51, 1, "+00:00"))
