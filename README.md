@@ -1,9 +1,7 @@
 # Skuby
 
 [![Build Status](https://travis-ci.org/welaika/skuby.png?branch=master)](https://travis-ci.org/welaika/skuby)
-[![Coverage Status](https://coveralls.io/repos/welaika/skuby/badge.png)](https://coveralls.io/r/welaika/skuby)
 [![Code Climate](https://codeclimate.com/github/welaika/skuby.png)](https://codeclimate.com/github/welaika/skuby)
-[![Dependency Status](https://gemnasium.com/welaika/skuby.png)](https://gemnasium.com/welaika/skuby)
 
 A Ruby interface for Skebby
 Allows you to send SMS through Skebby SMS Gateway.
