@@ -23,7 +23,7 @@ describe Skuby::Report do
     report.success?.must_equal false
     report.error_code.must_equal 502
     report.error_message.wont_be_empty
-    report.message_id.must_equal 333
+    report.message_id.must_equal '333'
     report.dispatch_id.must_equal '444'
     report.delivered_at.must_equal Time.new(
       2005, 8, 15, 15, 51, 1, '+00:00'
@@ -43,7 +43,7 @@ describe Skuby::Report do
     report = Skuby::Report.new(params)
 
     report.success?.must_equal true
-    report.message_id.must_equal 777
+    report.message_id.must_equal '777'
     report.dispatch_id.must_equal '666'
     report.recipient.must_equal '393471234567'
     report.user_reference.must_equal '12345'
