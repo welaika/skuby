@@ -61,7 +61,7 @@ module Skuby
     end
 
     def message_id
-      @raw['skebby_message_id'].to_i
+      @raw['skebby_message_id']
     end
 
     def dispatch_id
